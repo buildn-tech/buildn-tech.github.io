@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hermes Task Dashboard</title>
+  <style>
+    :root { color-scheme: light; --ink: #10231f; --muted: #60716a; --paper: #faf9f6; --panel: #ffffff; --hair: #e3e1d9; --green: #01dc82; --deep: #033330; --danger: #a23a32; }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--paper); color: var(--ink); font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; line-height: 1.5; }
+    header { background: var(--deep); color: white; padding: 32px max(24px, calc((100vw - 1040px) / 2)); border-top: 4px solid var(--green); }
+    main { width: min(1040px, calc(100% - 48px)); margin: 28px auto 48px; }
+    h1 { margin: 0 0 8px; font-size: clamp(2rem, 5vw, 3.75rem); letter-spacing: -0.04em; }
+    h2 { margin: 0 0 16px; font-size: 1.15rem; }
+    .meta { color: rgba(255,255,255,.72); margin: 0; }
+    .summary { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; margin-bottom: 24px; }
+    .metric, section { background: var(--panel); border: 1px solid var(--hair); border-radius: 16px; padding: 18px; }
+    .metric strong { display: block; font-size: 1.7rem; }
+    .metric span, .empty, .muted { color: var(--muted); }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; }
+    section { min-height: 140px; }
+    article { border-top: 1px solid var(--hair); padding: 14px 0; }
+    article:first-of-type { border-top: 0; padding-top: 0; }
+    .title { font-weight: 750; margin: 0 0 5px; }
+    .description { margin: 0 0 8px; color: var(--muted); }
+    .bad { color: var(--danger); }
+    .tags { display: flex; flex-wrap: wrap; gap: 6px; padding: 0; margin: 8px 0 0; list-style: none; }
+    .tags li { border: 1px solid var(--hair); border-radius: 999px; padding: 2px 8px; color: var(--muted); font-size: .82rem; }
+    .todos { margin: 8px 0 0; padding-left: 20px; color: var(--muted); }
+    .progress { display: inline-block; margin-top: 6px; color: var(--deep); font-weight: 650; }
+    footer { width: min(1040px, calc(100% - 48px)); margin: 0 auto 32px; color: var(--muted); font-size: .9rem; }
+  </style>
+</head>
+<body>
+  <header>
+    <p class="meta">Read-only public projection generated from private SQLite state.</p>
+    <h1>Hermes Task Dashboard</h1>
+    <p class="meta"><time datetime="2026-07-17T16:56:14.706285+03:00">Last updated: 2026-07-17 16:56 Africa/Cairo</time></p>
+  </header>
+  <main>
+    <div class="summary" aria-label="Task summary">
+      <div class="metric"><strong>0</strong><span>Total tasks</span></div>
+      <div class="metric"><strong>0</strong><span>Active tasks</span></div>
+      <div class="metric"><strong>0</strong><span>Overdue</span></div>
+    </div>
+    <p class="empty">No active tasks yet. Ask Hermes to create the first task.</p>
+    <div class="grid">
+      <section id="overdue"><h2>Overdue</h2><p class="empty">Nothing here.</p></section>
+      <section id="due-today"><h2>Due today</h2><p class="empty">Nothing here.</p></section>
+      <section id="upcoming"><h2>Upcoming</h2><p class="empty">Nothing here.</p></section>
+      <section id="in-progress"><h2>In progress</h2><p class="empty">Nothing here.</p></section>
+      <section id="no-due"><h2>Open without due date</h2><p class="empty">Nothing here.</p></section>
+      <section id="recently-completed"><h2>Recently completed</h2><p class="empty">Nothing here.</p></section>
+    </div>
+  </main>
+  <footer>Hermes Task Dashboard · static HTML only · no mutation controls</footer>
+</body>
+</html>
